@@ -36,7 +36,7 @@ class SwipeActionButton: UIButton {
         let highlightedTextColor = action.highlightedTextColor ?? tintColor
         highlightedBackgroundColor = action.highlightedBackgroundColor ?? UIColor.black.withAlphaComponent(0.1)
 
-        titleLabel?.font = action.font ?? UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
+        titleLabel?.font = action.font ?? UIFont.systemFont(ofSize: 15)
         titleLabel?.textAlignment = .center
         titleLabel?.lineBreakMode = .byWordWrapping
         titleLabel?.numberOfLines = 0
@@ -73,7 +73,7 @@ class SwipeActionButton: UIButton {
         
         return title.boundingRect(with: size,
                                   options: [.usesLineFragmentOrigin],
-                                  attributes: [NSAttributedStringKey.font: font],
+                                  attributes: [NSFontAttributeName: font],
                                   context: nil).integral
     }
     
