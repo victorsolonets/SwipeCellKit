@@ -48,6 +48,8 @@ class SwipeActionButton: UIButton {
         setTitleColor(highlightedTextColor, for: .highlighted)
         setImage(action.image, for: .normal)
         setImage(action.highlightedImage ?? action.image, for: .highlighted)
+        
+        imageView?.contentMode = .scaleAspectFit
     }
     
     override var isHighlighted: Bool {
