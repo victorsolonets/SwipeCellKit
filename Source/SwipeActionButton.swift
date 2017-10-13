@@ -63,7 +63,7 @@ class SwipeActionButton: UIButton {
         let textWidth = titleBoundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)).width
         let imageWidth = currentImage?.size.width ?? 0
         
-        return min(width, max(textWidth, imageWidth) + contentEdgeInsets.left + contentEdgeInsets.right)
+        return min(110, max(textWidth, imageWidth) + contentEdgeInsets.left + contentEdgeInsets.right)
     }
     
     func titleBoundingRect(with size: CGSize) -> CGRect {
@@ -82,7 +82,7 @@ class SwipeActionButton: UIButton {
     }
     
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
-        var rect = contentRect.center(size: currentImage?.size ?? .zero)
+        var rect = contentRect.center(size: CGSize(width: 150, height: 45))
         rect.origin.y = alignmentRect.minY + (maximumImageHeight - rect.height) / 2
         return rect
     }
